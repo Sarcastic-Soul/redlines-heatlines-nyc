@@ -22,6 +22,98 @@
       "pctHigh": 58.8
     }
   },
+  "byBorough": {
+    "Bronx": {
+      "A": {
+        "zones": 2,
+        "pctHigh": 0
+      },
+      "B": {
+        "zones": 11,
+        "pctHigh": 63.4
+      },
+      "C": {
+        "zones": 23,
+        "pctHigh": 76.1
+      },
+      "D": {
+        "zones": 7,
+        "pctHigh": 100
+      }
+    },
+    "Brooklyn": {
+      "A": {
+        "zones": 1,
+        "pctHigh": 0
+      },
+      "B": {
+        "zones": 17,
+        "pctHigh": 56.2
+      },
+      "C": {
+        "zones": 25,
+        "pctHigh": 62.3
+      },
+      "D": {
+        "zones": 23,
+        "pctHigh": 66.7
+      }
+    },
+    "Manhattan": {
+      "A": {
+        "zones": 8,
+        "pctHigh": 1.6
+      },
+      "B": {
+        "zones": 12,
+        "pctHigh": 13.8
+      },
+      "C": {
+        "zones": 6,
+        "pctHigh": 13.3
+      },
+      "D": {
+        "zones": 27,
+        "pctHigh": 39.2
+      }
+    },
+    "Queens": {
+      "A": {
+        "zones": 1,
+        "pctHigh": 0
+      },
+      "B": {
+        "zones": 17,
+        "pctHigh": 25.4
+      },
+      "C": {
+        "zones": 111,
+        "pctHigh": 45
+      },
+      "D": {
+        "zones": 39,
+        "pctHigh": 82.3
+      }
+    },
+    "Staten Island": {
+      "A": {
+        "zones": 4,
+        "pctHigh": 0
+      },
+      "B": {
+        "zones": 15,
+        "pctHigh": 4.9
+      },
+      "C": {
+        "zones": 24,
+        "pctHigh": 6.6
+      },
+      "D": {
+        "zones": 23,
+        "pctHigh": 2.5
+      }
+    }
+  },
   "allGradedPctHigh": 49.3,
   "zipsTotal": 184,
   "zipsHigh": 74

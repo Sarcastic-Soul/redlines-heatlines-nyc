@@ -13,12 +13,14 @@ const zBoxes = zcta.map((z) => bbox(z));
 
 const grades = ['A', 'B', 'C', 'D'];
 const out = Object.fromEntries(grades.map((g) => [g, { zones: 0, areaKm2: 0, highAreaKm2: 0 }]));
-const hviSplit = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+const byBorough = {};
 
 for (const f of holc) {
   const g = f.properties.grade;
   if (!out[g]) continue;
   out[g].zones += 1;
+  const b = (byBorough[f.properties.city] ??= Object.fromEntries(grades.map((x) => [x, { zones: 0, areaKm2: 0, highAreaKm2: 0 }])))[g];
+  b.zones += 1;
   const fb = bbox(f);
   zcta.forEach((z, i) => {
     if (!overlaps(fb, zBoxes[i])) return;
@@ -31,8 +33,11 @@ for (const f of holc) {
     if (!part) return;
     const km2 = area(part) / 1e6;
     out[g].areaKm2 += km2;
-    hviSplit[z.properties.hvi] += km2;
-    if (z.properties.hvi >= 4) out[g].highAreaKm2 += km2;
+    b.areaKm2 += km2;
+    if (z.properties.hvi >= 4) {
+      out[g].highAreaKm2 += km2;
+      b.highAreaKm2 += km2;
+    }
   });
 }
 
@@ -48,6 +53,14 @@ const result = {
         areaKm2: +out[g].areaKm2.toFixed(2),
         pctHigh: out[g].areaKm2 ? +((out[g].highAreaKm2 / out[g].areaKm2) * 100).toFixed(1) : 0,
       },
+    ])
+  ),
+  byBorough: Object.fromEntries(
+    Object.entries(byBorough).map(([city, gs]) => [
+      city,
+      Object.fromEntries(
+        grades.map((g) => [g, { zones: gs[g].zones, pctHigh: gs[g].areaKm2 ? +((gs[g].highAreaKm2 / gs[g].areaKm2) * 100).toFixed(1) : null }])
+      ),
     ])
   ),
   allGradedPctHigh: +((totalHigh / totalArea) * 100).toFixed(1),
