@@ -1,0 +1,28 @@
+{
+  "method": "Share of each HOLC grade's land area (km2) that falls inside ZIP zones scored 4 or 5 on the heat vulnerability index.",
+  "grades": {
+    "A": {
+      "zones": 16,
+      "areaKm2": 10.63,
+      "pctHigh": 0.5
+    },
+    "B": {
+      "zones": 72,
+      "areaKm2": 68.68,
+      "pctHigh": 39.6
+    },
+    "C": {
+      "zones": 189,
+      "areaKm2": 221.49,
+      "pctHigh": 49.2
+    },
+    "D": {
+      "zones": 119,
+      "areaKm2": 125.27,
+      "pctHigh": 58.8
+    }
+  },
+  "allGradedPctHigh": 49.3,
+  "zipsTotal": 184,
+  "zipsHigh": 74
+}

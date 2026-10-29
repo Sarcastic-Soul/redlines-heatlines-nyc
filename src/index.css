@@ -1,0 +1,25 @@
+:root {
+  font: 15px/1.45 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: #222;
+  background: #fff;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h3 {
+  font-weight: 600;
+  color: inherit;
+}
