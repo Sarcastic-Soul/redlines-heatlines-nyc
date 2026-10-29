@@ -47,6 +47,13 @@ VITE_AWS_LOCATION_MAP_KEY=...      # turns on the Amazon Location basemap
 
 `./deploy.sh` builds, syncs `dist/` to the S3 bucket with long cache headers on hashed assets, and invalidates `index.html` and `data/*` on the CloudFront distribution.
 
+## Licence
+
+The code is MIT licensed (see `LICENSE`). The data is not covered by that licence:
+
+- `public/data/holc_nyc.json` is derived from Mapping Inequality (University of Richmond and partners) and stays under CC BY-NC-SA 4.0. Credit the source, share adaptations under the same terms, and do not use it commercially.
+- `public/data/zcta_hvi.json` comes from the NYC Health Department Heat Vulnerability Index. Check the NYC Open Data terms before reuse.
+
 ## Stack
 
 React 19, Vite, MapLibre GL JS 6 through react-map-gl, Turf for point lookups. maplibre-gl 6 needs its worker file passed in by hand (`src/main.tsx`), since Vite does not ship it next to the bundle.
